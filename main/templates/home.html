@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+<div class="inputTable">
+    <br>
+    <h3 class="westFont smokeRed middleText center boxIt">The first online lottery with “free” entry and a grand prize of all players personal data.
+    </h3>
+    <br>
+    <h1 class="center westFont smokeOrange mobileText">Players in database:</h1>
+    <h1 class="smokeOrange center boxIt tickerFont mobileText">{{ userCount }} users</h1>
+    
+    <br>
+    <h1 class="center westFont smokeOrange mobileText">Estimated value:</h1>
+    <h1 class="smokeOrange center boxIt tickerFont mobileText">{{ dataValue }}$</h1>
+    <p class= "center westFont smokeOrange">*Estimation is calculated with an estimation of user data being worth .007$</p>
+    
+    <br>
+    <br>
+
+    <h3 class="center smokeOrange typeWriterFont mobileTextMedium">HOW TO PLAY:</h3>
+
+    <div class="center smokeOrange typeWriterFont mobileTextSmall ">
+        <ol>
+            <li>Enter your personal data in the forum below.</li>
+            <li>Pick your lucky numbers on the powerballs.</li>
+            <li>If your powerballs are the same as the winning balls (1 in 292,000,000) odds, you will be emailed with instructions on how to access the personal data of all previous participants.</li>
+        </ol>
+    </div>
+    
+    <div id="content">
+        <div class="desktop">
+            <br>
+            <br>
+            <div class="container-fluid typeWriterFont smokeOrange center">
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    <div class="col-24">
+                    </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.first_name|as_crispy_field }}
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.last_name|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.zipcode|as_crispy_field }}
+                                    </div>
+                                    <div class="col-8">
+                                        {{ form.phone|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        {{ form.email|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="col-12">
+                                    {{ form.political_party|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <iframe width="450" height="260" src="https://www.youtube.com/embed/GHo4MFE6tr4?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    <br>
+                    <div class="col-12">
+                        {{ form.consent|as_crispy_field }}
+                    </div>
+                    <br>
+                    <div class="col-12">
+                        {{ form.emailListConsent|as_crispy_field }}
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-success">Play the Lotto</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="mobile_device_480px">
+            <div class="container-fluid westFont smokeOrange center">
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    <div class="col-24">
+                        <br>
+                        <div class="row">
+                            <iframe width="450" height="260" src="https://www.youtube.com/embed/GHo4MFE6tr4?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <br>
+                        <div class="row">
+                            {{ form.first_name|as_crispy_field }}
+                        </div>
+                        <br>
+                        <div class="row">
+                            {{ form.last_name|as_crispy_field }}
+                        </div>
+                        <br>
+                        <div class="row">
+                            {{ form.zipcode|as_crispy_field }}
+                        </div>
+                        <br>
+                        <div class="row">
+                            {{ form.phone|as_crispy_field }}
+                        </div>
+                        <br>
+                        <div class="row">
+                            {{ form.email|as_crispy_field }}
+                        </div>
+                        <br>
+                        <div class="row">
+                            {{ form.political_party|as_crispy_field }}
+                        </div>
+                        <br>
+                        <div class="row">
+                            {{ form.consent|as_crispy_field }}
+                        </div>
+                        <br>
+                        <div class="row">
+                            {{ form.emailListConsent|as_crispy_field }}
+                        </div>
+                        <br>
+                        <div class="row">
+                            <button type="submit" class="btn btn-success">Play the Lotto</button>
+                        </div>
+
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"
+></script>
+</body>
+
+
+</html>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% load static %}
+<body>
+  <style>
+    body {
+      text-align: center;
+      background-color: black;
+    }
+    h1 {
+      text-align: center;
+      color: white;
+    }
+    h3 {
+      text-align: center;
+      color: white;
+    }
+  </style>
+  <h1>Error 404</h1>
+  <h3>Page not found</h3>
+  <div class="imgbox">
+    <a class="center-fit" href="{% url 'main:personal-data-input' %}">
+      <img src="{% static 'main/gifs/MrLottoGif.gif'%}" />
+    </a>
+  </div>
+  <h3>Click on Mr. Lotto to return to safety!!</h3>
+</body>

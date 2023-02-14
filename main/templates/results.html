@@ -1,0 +1,188 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<br>
+<script src="{% static 'main/js/main.js' %}"></script>
+
+
+<h1 class="mobileText center westFont smokeOrange">
+  Winning numbers for {{dateTimeString}}
+</h1>
+
+<br>
+
+<div id="content">
+  <div class="desktop">
+    <div class="container-fluid westFont smokeOrange center">
+      <div class="row">
+        <div class="col-5">Your balls are:</div>
+      </div>
+
+      <!--Balls div grid below-->
+      <div class="row">
+        <div class="col-2">
+          <div class="container">
+            <img
+              src="{% static 'main/images/white3DBall.png'%}"
+              alt="WhiteBall"
+              style="width: 120%"
+            />
+            <div class="centered ballSizeFontDesktop">{{PlayerBall1}}</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="container">
+            <img
+              src="{% static 'main/images/white3DBall.png'%}"
+              alt="WhiteBall"
+              style="width: 120%"
+            />
+            <div class="centered ballSizeFontDesktop">{{PlayerBall2}}</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="container">
+            <img
+              src="{% static 'main/images/white3DBall.png'%}"
+              alt="WhiteBall"
+              style="width: 120%"
+            />
+            <div class="centered ballSizeFontDesktop">{{PlayerBall3}}</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="container">
+            <img
+              src="{% static 'main/images/white3DBall.png'%}"
+              alt="WhiteBall"
+              style="width: 120%"
+            />
+            <div class="centered ballSizeFontDesktop">{{PlayerBall4}}</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="container">
+            <img
+              src="{% static 'main/images/white3DBall.png'%}"
+              alt="WhiteBall"
+              style="width: 120%"
+            />
+            <div class="centered ballSizeFontDesktop">{{PlayerBall5}}</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="container">
+            <img
+              src="{% static 'main/images/redEmptyBall.png'%}"
+              alt="WhiteBall"
+              style="width: 110%"
+            />
+            <div class="centered ballSizeFontDesktop">{{PlayerPowerBall}}</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-5">The lotto balls are:</div>
+        </div>
+        <!--LOTTO BALL div grid below-->
+        <div class="row">
+          <div class="container">
+            <img
+              src="{% static 'main/gifs/ballRenderCropSlowNoLoop.gif'%}"
+              alt="WhiteBall"
+              style="width: 100%"
+            />
+            <div class="ball1Pose ballSizeFontDesktop">{{LottoBall1}}</div>
+            <div class="ball2Pose ballSizeFontDesktop">{{LottoBall2}}</div>
+            <div class="ball3Pose ballSizeFontDesktop">{{LottoBall3}}</div>
+            <div class="ball4Pose ballSizeFontDesktop">{{LottoBall4}}</div>
+            <div class="ball5Pose ballSizeFontDesktop">{{LottoBall5}}</div>
+            <div class="powerBallPose ballSizeFontDesktop">{{LottoPowerBall}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile_device_480px">
+    <div class="container-fluid westFont smokeOrange center">
+      <div class="row">
+        <div class="col-7">Your balls are:</div>
+      </div>
+
+      <!--Balls div grid below-->
+      <div class="row">
+        <div class="col-2">
+            <div class="backgroundWhiteBallMini">
+                <div class="inputShrinkMini">
+                  {{PlayerBall1}}
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="backgroundWhiteBallMini">
+                <div class="inputShrinkMini">
+                  {{PlayerBall2}}
+                </div>
+
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="backgroundWhiteBallMini">
+                <div class="inputShrinkMini">
+                  {{PlayerBall3}}
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+          <div class="backgroundWhiteBallMini">
+              <div class="inputShrinkMini">
+                {{PlayerBall4}}
+              </div>
+          </div>
+      </div>
+      <div class="col-2">
+        <div class="backgroundWhiteBallMini">
+            <div class="inputShrinkMini">
+              {{PlayerBall5}}
+            </div>
+        </div>
+    </div>
+    <div class="col-2">
+      <div class="backgroundPowerballMini">
+          <div class="inputShrinkMini">
+            {{PlayerPowerBall}}
+          </div>
+      </div>
+  </div>
+
+          <div class="row">
+            <div class="col-9">The lotto balls are:</div>
+          </div>
+          <!--LOTTO BALL div grid below-->
+          <div class="row">
+            <div class="container">
+              <img
+                src="{% static 'main/gifs/ballRenderCropSlowNoLoop.gif'%}"
+                alt="WhiteBall"
+                style="width: 175%"
+              />
+              <div class="ball1PoseMobile">{{LottoBall1}}</div>
+              <div class="ball2PoseMobile">{{LottoBall2}}</div>
+              <div class="ball3PoseMobile">{{LottoBall3}}</div>
+              <div class="ball4PoseMobile">{{LottoBall4}}</div>
+              <div class="ball5PoseMobile">{{LottoBall5}}</div>
+              <div class="powerBallPoseMobile">{{LottoPowerBall}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<br />
+<div id="results" class=" hide westFont smokeOrange center">
+  No win this time. Thanks for playing, dont worry your data is as safe as
+  the odds of winning the powerball!! {% endblock %}
+</div>
