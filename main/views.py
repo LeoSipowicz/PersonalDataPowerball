@@ -19,7 +19,7 @@ def get_data(request):
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
-            form.save()
+            # form.save()
             request.session['form-submitted'] = True
             request.session['balls-picked'] = False
             request.session['balls-rolled'] = False
